@@ -48,16 +48,6 @@ const getLinks = document => {
   return links;
 }
 
-//validar que los links existan
-// const isLinkValid = link => {
-//   return new promises((resolve, reject) => {
-//     if(err) {
-//       reject(err)
-//       return;
-//     }
-//       resolve(link);
-
-//   })
 
 
 const readFile = path => {
@@ -182,6 +172,16 @@ module.exports = mdLinks;
 
 
 
+//validar que los links existan
+// const isLinkValid = link => {
+//   return new promises((resolve, reject) => {
+//     if(err) {
+//       reject(err)
+//       return;
+//     }
+//       resolve(link);
+
+//   })
 
 
 // const readFile = (fileName, type) => {

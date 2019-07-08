@@ -29,5 +29,8 @@
   "author": "Jocelyn Casteletti",
   "bin": {
     "md-links": "src/md-links.js"
+  },
+  "jest": {
+    "coverageReporters": ["json", "html"]
   }
 }
