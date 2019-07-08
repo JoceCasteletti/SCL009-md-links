@@ -58,6 +58,15 @@ describe('mdLinks un solo archivo', () => {
   it('debe contener atributo text', () => {
     return expect(mdLinks(path.resolve(__dirname, './pruebatest1.md'))).resolves.toHaveProperty([0, 'text']);
   });
+
+  it('debe atributo file contener el valor especificado', () => {
+    return expect(mdLinks(path.resolve(__dirname, './pruebatest1.md'))).resolves.toHaveProperty([0, 'file'], path.resolve(__dirname, './pruebatest1.md'));
+  });
+
+  //https://jestjs.io/docs/es-ES/expect#rejects
+  it('debe arrojar error si la ruta no es válida (extensión inválida)', () => {
+    return expect(mdLinks(path.resolve(__dirname, './pruebatest1.txt'))).rejects.toThrow('La extensión de archivo no es válida');
+  });
 });
 
 describe('mdLinks todos los archivo', () => {

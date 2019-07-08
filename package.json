@@ -9,7 +9,7 @@
     "deploy": "gh pages -g src/"
   },
   "license": "ISC",
-  "main": "md-links.js",
+  "main": "index.js",
   "keywords": [
     "Markdown",
     "node",

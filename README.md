@@ -7,7 +7,7 @@ Extrae los links de tus directorios y/o archivos markdown (.md).
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. 
 
-Estos archivos `Markdown` normalmente contienen _links_.
+Estos archivos normalmente contienen _links_.
 
 Dentro de una comunidad de código abierto, nos han propuesto crear una
 herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
@@ -24,23 +24,53 @@ Para usar esta biblioteca instala:
 npm install @jocecasteletti/md-links --save
 
 
+
+Ejemplo uso biblioteca
+```javascript
+const mdLinks = require('@jocecasteletti/md-links');
+
+mdLinks('rutaalreadme/ejemplo.md')
+  .then(data => {
+    // Imprime arreglo de los objetos de los links
+    data.forEach(link => {
+      console.log(`href: ${link.href}, file: ${link.file}, text: ${link.text}`);
+    });
+  })
+  .catch(error => {
+    // Imprime error en el caso de por ejemplo, ruta inválida
+    console.error(error);
+  });
+```
+
+
 ## Comando línea de interfaz
 
-Ejecución de la librería:
-
-![Cli](./src/img/cli.jpg)
+Ejemplo CLI
+```
+$ npm install @jocecasteletti/md-links --save
+$ npx md-links ejemplo.md
+```
+El anterior comando da como resultado 
+```
+C:\rutaalarchivo\ejemplo.md https://github.com/workshopper/learnyounode learnyounode
+C:\rutaalarchivo\ejemplo.md https://github.com/workshopper/how-to-npm how-to-npm
+```
 
 
 
 ## Leer un directorio
 
-![directory](./src/img/directory.jpg)
+```
+C:\rutaalarchivo\SCL009-md-links> node .\src\md-links.js ./
 
- En ambos casos, se obtiene como resultado:
+```
 
-![links](./src/img/links.jpg)
+El anterior comando da como resultado
 
 
+```
+C:\rutaalarchivo\SCL009-md-links\prueba.1.md https://github.com/workshopper/learnyounode learnyounode
+```
 
 ### Dependencias:
 
@@ -60,4 +90,5 @@ Puedes seleccionar [aquí](https://trello.com/b/vTQ9Thfe/md-links)
 
 
 Autor
-Jocelyn Casteletti
+Jocelyn Casteletti, 9na generación, Laboratoria.
+
